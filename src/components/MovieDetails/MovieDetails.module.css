@@ -1,0 +1,89 @@
+.movieContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1600px;
+  margin-top: 50px;
+}
+
+.movieImg {
+  margin-left: 20px;
+  margin-right: 20px;
+  -webkit-box-shadow: 0 0 14px 3px rgba(0, 0, 0, 0.72);
+  -moz-box-shadow: 0 0 14px 3px rgba(0, 0, 0, 0.72);
+  box-shadow: 0 0 14px 3px rgba(0, 0, 0, 0.72);
+}
+
+.movieData {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.movieTitle {
+  font-family: 'Foldit', cursive;
+  color: #EB5900;
+  font-size: 40px;
+  font-weight: bolder;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.movieInfo {
+  margin-top: 0;
+  margin-left: 50px;
+}
+
+.movieItem {
+  font-size: 15px;
+}
+
+.movieOverview {
+  font-size: 20px;
+  width: 800px;
+  border: #EB5900 2px solid;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.boldText {
+  font-weight: bold;
+}
+
+.movieExtraDetails {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.movieExtraItem {
+  font-family: 'Foldit', cursive;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.movieExtraItem:not(:last-child) {
+  margin-right: 25px;
+}
+
+.movieExtraLink {
+  text-decoration: none;
+  color: #524C49;
+  border: #524C49 1px solid;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.movieExtraLink:hover,
+.movieExtraLink:focus {
+  border: #EB5900 1px solid;
+  color: #EB5900;
+}
+
+.additionalTitle {
+  font-family: 'Foldit', cursive;
+  font-size: 30px;
+  color: #524C49;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: 50px;
+}

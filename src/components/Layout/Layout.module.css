@@ -1,0 +1,92 @@
+.header {
+  background-color: #FFF4F0;
+  width: 1600px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-shadow: 0 10px 16px -4px rgba(0, 0, 0, 0.61);
+  -moz-box-shadow: 0 10px 16px -4px rgba(0, 0, 0, 0.61);
+  box-shadow: 0 10px 16px -4px rgba(0, 0, 0, 0.61);
+}
+
+.navigationList {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.navigationItem:not(:last-child) {
+  margin-right: 25px;
+}
+
+.navigationLink {
+  font-family: 'Foldit', cursive;
+  color: #524C49;
+  font-size: 30px;
+  font-weight: bolder;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navigationLink:hover,
+.navigationLink:focus {
+  color: #EB5900;
+  text-decoration: underline;
+}
+
+.logoImage {
+  margin-left: 500px;
+  margin-top: 10px;
+}
+
+.logoContainer {
+  position: absolute;
+  z-index: 100;
+}
+
+.scrollToTopButton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: transparent;
+  border: #524C49 2px solid;
+  border-radius: 50px;
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-name: pulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+}
+
+.scrollToTopImage {
+  width: 70px;
+  height: 70px;
+}

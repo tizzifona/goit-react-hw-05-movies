@@ -1,0 +1,47 @@
+.castContainer {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.castTitle {
+  font-family: 'Foldit', cursive;
+  color: #EB5900;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.castList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.separator {
+  border-bottom: 1px solid #524C49;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.castItem {
+  width: 200px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  border: #524C49 1px solid;
+}
+
+.castItem:nth-child(7n) {
+  margin-right: 0;
+}
+
+.castItemName {
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.castItemText {
+  font-size: 10px;
+}

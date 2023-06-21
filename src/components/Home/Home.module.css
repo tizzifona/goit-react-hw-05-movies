@@ -1,0 +1,61 @@
+.homeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.textHeader {
+  font-family: 'Foldit', cursive;
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 0;
+  color: #EB5900;
+}
+
+.homeList {
+  width: 1600px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: center;
+}
+
+.homeItem {
+  width: 370px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 20px;
+  border: #524C49 3px solid;
+  padding-top: 10px;
+}
+
+.homeItem:nth-child(4n) {
+  margin-right: 0;
+}
+
+.homeItem:hover,
+.homeItem:focus {
+  -webkit-box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.72);
+  -moz-box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.72);
+  box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.72);
+  border: #EB5900 3px solid;
+}
+
+.homeImg {
+  width: 350px;
+  margin-top: 10px;
+  -webkit-box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.72);
+  -moz-box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.72);
+  box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.72);
+}
+
+.homeLink {
+  transition: transform .17s;
+  font-family: 'Foldit', cursive;
+  font-size: 25px;
+  color: #524C49;
+}

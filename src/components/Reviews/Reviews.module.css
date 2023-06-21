@@ -1,0 +1,53 @@
+.reviewsContainer {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.separator {
+  border-bottom: 1px solid #524C49;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.reviewsTitle {
+  font-family: 'Foldit', cursive;
+  color: #EB5900;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.noReviewsText {
+  font-family: 'Foldit', cursive;
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #524C49;
+  font-size: 40px;
+}
+
+.reviewsList{
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.reviewsListItem {
+  font-size: 20px;
+  border: #524C49 1px solid;
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+
+.reviewsAuthor {
+  font-family: 'Foldit', cursive;
+  font-size: 25px;
+  font-weight: bolder;
+  color: #EB5900;
+}
