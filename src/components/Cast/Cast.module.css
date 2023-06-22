@@ -45,3 +45,11 @@
 .castItemText {
   font-size: 10px;
 }
+
+.noCastName {
+  font-family: "Roboto", cursive;
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #524C49;
+  font-size: 30px;
+}

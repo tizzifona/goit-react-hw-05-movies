@@ -47,7 +47,7 @@ const Cast = () => {
           ))}
         </ul>
       ) : (
-        <p>We don't have any information about the cast yet.</p>
+        <p className={css.noCastName}>We don't have any information about the cast yet.</p>
       )}
     </div>
   );
