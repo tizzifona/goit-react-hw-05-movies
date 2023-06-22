@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import css from './App.module.css';
 
 const Home = React.lazy(() => import('./Home'));
@@ -12,7 +12,6 @@ const Layout = React.lazy(()=> import('./Layout'));
 const App = () => {
   return (
     <div className={css.mainContainer}>
-      <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -23,7 +22,6 @@ const App = () => {
             </Route>
           </Route>
         </Routes>
-      </Router>
     </div>
   );
 };

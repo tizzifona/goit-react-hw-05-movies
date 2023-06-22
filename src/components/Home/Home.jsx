@@ -15,8 +15,8 @@ const Home = () => {
   };
 
   const truncateTitle = (title) => {
-    if (title.length > 40) {
-      return title.slice(0, 40) + '...';
+    if (title.length > 25) {
+      return title.slice(0, 25) + '...';
     }
     return title;
   };

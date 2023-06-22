@@ -39,7 +39,7 @@ const Cast = () => {
                   alt={`${actor.name} profile`}
                 />
               )}
-              <div className={css.castItemInfo}>
+              <div>
                 <p className={css.castItemName}>{actor.name}</p>
                 <p className={css.castItemText}>Character: {actor.character}</p>
               </div>

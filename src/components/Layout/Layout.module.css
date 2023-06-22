@@ -1,6 +1,13 @@
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .header {
   background-color: #FFF4F0;
-  width: 1600px;
+  width: 1400px;
   height: 90px;
   display: flex;
   align-items: center;
@@ -22,7 +29,7 @@
 }
 
 .navigationLink {
-  font-family: 'Foldit', cursive;
+  font-family: "Roboto", cursive;
   color: #524C49;
   font-size: 30px;
   font-weight: bolder;
@@ -36,13 +43,14 @@
 }
 
 .logoImage {
-  margin-left: 500px;
-  margin-top: 10px;
+  position: absolute;
+  top: 10px;
+  left: -250px;
 }
 
 .logoContainer {
-  position: absolute;
-  z-index: 100;
+  position: relative;
+  z-index: 1000;
 }
 
 .scrollToTopButton {

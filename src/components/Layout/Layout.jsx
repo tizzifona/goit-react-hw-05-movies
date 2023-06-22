@@ -32,7 +32,7 @@ const Layout = () => {
   };
 
   return (
-    <div>
+    <div className={css.layoutContainer}>
       <div className={css.logoContainer}>
         <img src={logoImage} alt="Logo" className={css.logoImage} />
       </div>

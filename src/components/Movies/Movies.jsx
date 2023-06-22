@@ -34,8 +34,8 @@ const Movies = () => {
   };
 
   const truncateTitle = (title) => {
-    if (title.length > 40) {
-      return title.slice(0, 40) + '...';
+    if (title.length > 25) {
+      return title.slice(0, 25) + '...';
     }
     return title;
   };
@@ -57,7 +57,7 @@ const Movies = () => {
       <ul className={css.moviesList}>
         {movies.map((movie) => (
           <li className={css.moviesItem} key={movie.id}>
-            <a href={`/movies/${movie.id}`} className={css.moviesLink}>
+            <a href={`/goit-react-hw-05-movies/movies/${movie.id}`} className={css.moviesLink}>
               {truncateTitle(movie.title)}
               {movie.poster_path && <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className={css.moviesImg} />}
             </a>

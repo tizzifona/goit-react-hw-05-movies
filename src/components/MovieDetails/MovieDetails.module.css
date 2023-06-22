@@ -1,13 +1,15 @@
 .movieContainer {
   display: flex;
   flex-wrap: wrap;
-  width: 1600px;
+  width: 1400px;
   margin-top: 50px;
 }
 
 .movieImg {
+  width: 400px;
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 20px;
   -webkit-box-shadow: 0 0 14px 3px rgba(0, 0, 0, 0.72);
   -moz-box-shadow: 0 0 14px 3px rgba(0, 0, 0, 0.72);
   box-shadow: 0 0 14px 3px rgba(0, 0, 0, 0.72);
@@ -20,7 +22,7 @@
 }
 
 .movieTitle {
-  font-family: 'Foldit', cursive;
+  font-family: "Roboto", cursive;
   color: #EB5900;
   font-size: 40px;
   font-weight: bolder;
@@ -51,12 +53,12 @@
 
 .movieExtraDetails {
   display: flex;
-  justify-content: center;
+  margin-left: 50px;
   margin-bottom: 40px;
 }
 
 .movieExtraItem {
-  font-family: 'Foldit', cursive;
+  font-family: "Roboto", cursive;
   font-size: 30px;
   font-weight: bolder;
 }
@@ -80,7 +82,7 @@
 }
 
 .additionalTitle {
-  font-family: 'Foldit', cursive;
+  font-family: "Roboto", cursive;
   font-size: 30px;
   color: #524C49;
   margin-top: 50px;

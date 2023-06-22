@@ -5,7 +5,7 @@
 }
 
 .moviesTitle {
-  font-family: 'Foldit', cursive;
+  font-family: "Roboto", cursive;
   color: #EB5900;
   font-size: 40px;
   font-weight: bolder;
@@ -95,7 +95,7 @@
 }
 
 .moviesList {
-  width: 1600px;
+  width: 1400px;
   display: flex;
   flex-wrap: wrap;
   padding: 0;
@@ -103,7 +103,7 @@
 }
 
 .moviesItem {
-  width: 370px;
+  width: 320px;
   margin-right: 20px;
   display: flex;
   flex-direction: column;
@@ -126,8 +126,8 @@
 }
 
 .moviesImg {
-  width: 350px;
-  height: 524px;
+  width: 300px;
+  height: 450px;
   margin-top: 10px;
   -webkit-box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.72);
   -moz-box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.72);
@@ -136,7 +136,8 @@
 
 .moviesLink {
   transition: transform .17s;
-  font-family: 'Foldit', cursive;
-  font-size: 25px;
+  font-family: "Roboto", cursive;
+  font-size: 20px;
+  font-weight: bold;
   color: #524C49;
 }

@@ -7,7 +7,7 @@
 }
 
 .castTitle {
-  font-family: 'Foldit', cursive;
+  font-family: "Roboto", cursive;
   color: #EB5900;
   font-size: 40px;
   font-weight: bolder;
@@ -33,7 +33,7 @@
   border: #524C49 1px solid;
 }
 
-.castItem:nth-child(7n) {
+.castItem:nth-child(6n) {
   margin-right: 0;
 }
 

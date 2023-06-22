@@ -13,14 +13,14 @@
 }
 
 .reviewsTitle {
-  font-family: 'Foldit', cursive;
+  font-family: "Roboto", cursive;
   color: #EB5900;
   font-size: 40px;
   font-weight: bolder;
 }
 
 .noReviewsText {
-  font-family: 'Foldit', cursive;
+  font-family: "Roboto", cursive;
   margin-top: 0;
   margin-bottom: 30px;
   color: #524C49;
@@ -46,7 +46,7 @@
 }
 
 .reviewsAuthor {
-  font-family: 'Foldit', cursive;
+  font-family: "Roboto", cursive;
   font-size: 25px;
   font-weight: bolder;
   color: #EB5900;
