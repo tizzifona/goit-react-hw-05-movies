@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link, Outlet } from 'react-router-dom';
+import { useParams, Link, Outlet, useLocation, NavLink } from 'react-router-dom';
 import { getMovieDetails, getMovieReviews } from '../API/API';
 import css from './MovieDetails.module.css';
+import iconBack from '../images/icon-back.png';
+
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const [reviews, setReviews] = useState([]);
+  const location = useLocation();
+  const [previousPage] = useState(location.state?.from ?? '/');
+
 
   useEffect(() => {
     const fetchMovieData = async () => {
@@ -28,60 +33,72 @@ const MovieDetails = () => {
     : 'Not rated yet';
 
   return (
-    <div className={css.movieContainer}>
-      <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className={css.movieImg} />
-      <div className={css.movieData}>
-        <ul className={css.movieInfo}>
-          <h2 className={css.movieTitle}>
-            {movie.title}
-          </h2>
-          <li className={css.movieItem}>
-            <p>
-              <span className={css.boldText}>Rating:</span> {userScore}
-            </p>
-          </li>
-          <li className={css.movieOverview}>
-            <p>{movie.overview}</p>
-          </li>
-          <li className={css.movieItem}>
-            <p>
-              <span className={css.boldText}>Genres:</span> {movie.genres.map((genre) => genre.name).join(', ')}
-            </p>
-          </li>
-          <li className={css.movieItem}>
-            <p>
-              <span className={css.boldText}>Release Date:</span> {movie.release_date}
-            </p>
-          </li>
-        </ul>
-        <h3 className={css.additionalTitle}>Additional information</h3>
-        <ul className={css.movieExtraDetails}>
-          <li className={css.movieExtraItem}>
-            <Link to={`/movies/${movieId}/cast`} className={css.movieExtraLink}>Cast</Link>
-          </li>
-          <li className={css.movieExtraItem}>
-            <Link to={`/movies/${movieId}/reviews`} className={css.movieExtraLink}>Reviews</Link>
-          </li>
-        </ul>
-      </div>
-      <Outlet />
-      {reviews && reviews.length > 0 && (
-        <div>
-          <h3>Reviews</h3>
-          <ul>
-            {reviews.map((review) => (
-              <li key={review.id}>
-                <p>Author: {review.author}</p>
-                <p>Content: {review.content}</p>
-              </li>
-            ))}
+    <div className={css.mainMovieDetails}>
+      <NavLink to={previousPage} className={css.backBtn}>
+        <img src={iconBack} alt="Back" className={css.backBtnImage} />Back
+      </NavLink>
+      <div className={css.movieContainer}>
+        <img
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          alt={movie.title}
+          className={css.movieImg}
+        />
+        <div className={css.movieData}>
+          <ul className={css.movieInfo}>
+            <h2 className={css.movieTitle}>{movie.title}</h2>
+            <li className={css.movieItem}>
+              <p>
+                <span className={css.boldText}>Rating:</span> {userScore}
+              </p>
+            </li>
+            <li className={css.movieOverview}>
+              <p>{movie.overview}</p>
+            </li>
+            <li className={css.movieItem}>
+              <p>
+                <span className={css.boldText}>Genres:</span>{' '}
+                {movie.genres.map((genre) => genre.name).join(', ')}
+              </p>
+            </li>
+            <li className={css.movieItem}>
+              <p>
+                <span className={css.boldText}>Release Date:</span> {movie.release_date}
+              </p>
+            </li>
+          </ul>
+          <h3 className={css.additionalTitle}>Additional information</h3>
+          <ul className={css.movieExtraDetails}>
+            <li className={css.movieExtraItem}>
+              <Link to={`/movies/${movieId}/cast`} className={css.movieExtraLink}>
+                Cast
+              </Link>
+            </li>
+            <li className={css.movieExtraItem}>
+              <Link to={`/movies/${movieId}/reviews`} className={css.movieExtraLink}>
+                Reviews
+              </Link>
+            </li>
           </ul>
         </div>
-      )}
+        <Outlet />
+        {reviews && reviews.length > 0 && (
+          <div>
+            <h3>Reviews</h3>
+            <ul>
+              {reviews.map((review) => (
+                <li key={review.id}>{review.content}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
 export default MovieDetails;
+
+
+
 
 
