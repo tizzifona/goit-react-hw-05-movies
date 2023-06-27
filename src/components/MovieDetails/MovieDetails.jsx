@@ -3,6 +3,7 @@ import { useParams, Link, Outlet, useLocation, NavLink } from 'react-router-dom'
 import { getMovieDetails, getMovieReviews } from '../API/API';
 import css from './MovieDetails.module.css';
 import iconBack from '../images/icon-back.png';
+import loader from '../images/loader.gif';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -10,7 +11,6 @@ const MovieDetails = () => {
   const [reviews, setReviews] = useState([]);
   const location = useLocation();
   const [previousPage] = useState(location.state?.from ?? '/');
-
 
   useEffect(() => {
     const fetchMovieData = async () => {
@@ -25,12 +25,15 @@ const MovieDetails = () => {
   }, [movieId]);
 
   if (!movie) {
-    return <div>Loading...</div>;
+    return <div><img src={loader} alt="Loader"/></div>;
   }
 
   const userScore = movie.vote_average
     ? `${(movie.vote_average * 10).toFixed(0)}%`
     : 'Not rated yet';
+
+
+  const trimmedTitle = movie.title.length > 40 ? `${movie.title.substring(0, 40)}...` : movie.title;
 
   return (
     <div className={css.mainMovieDetails}>
@@ -45,7 +48,7 @@ const MovieDetails = () => {
         />
         <div className={css.movieData}>
           <ul className={css.movieInfo}>
-            <h2 className={css.movieTitle}>{movie.title}</h2>
+            <h2 className={css.movieTitle}>{trimmedTitle}</h2>
             <li className={css.movieItem}>
               <p>
                 <span className={css.boldText}>Rating:</span> {userScore}
@@ -97,8 +100,3 @@ const MovieDetails = () => {
 };
 
 export default MovieDetails;
-
-
-
-
-

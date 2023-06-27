@@ -1,10 +1,14 @@
-import { Suspense, useEffect, useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import React, { Suspense, useEffect, useState } from 'react';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import css from './Layout.module.css';
 import logoImage from '../images/icon-logo.png';
 import scrollToTopImage from '../images/button-up.png';
+import loader from '../images/loader.gif';
+
 const Layout = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
+  const location = useLocation();
+  const [key, setKey] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,10 +35,16 @@ const Layout = () => {
     });
   };
 
+  const handleMoviesLinkClick = () => {
+    if (location.pathname === '/movies') {
+      setKey(prevKey => prevKey + 1);
+    }
+  };
+
   return (
     <div className={css.layoutContainer}>
       <div className={css.logoContainer}>
-        <img src={logoImage} alt="Logo" className={css.logoImage} />
+        <Link to="/"><img src={logoImage} alt="Logo" className={css.logoImage} /></Link>
       </div>
       <header className={css.header}>
         <ul className={css.navigationList}>
@@ -42,13 +52,19 @@ const Layout = () => {
             <Link to="/" className={css.navigationLink}>Home</Link>
           </li>
           <li className={css.navigationItem}>
-            <Link to="/movies" className={css.navigationLink}>Movies</Link>
+            <Link
+              to="/movies"
+              className={css.navigationLink}
+              onClick={handleMoviesLinkClick}
+            >
+              Movies
+            </Link>
           </li>
         </ul>
       </header>
 
       <main>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense key={key} fallback={<div><img src={loader} alt="Loader"/></div>}>
           <Outlet />
         </Suspense>
       </main>
